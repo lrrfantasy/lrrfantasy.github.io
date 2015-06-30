@@ -11,8 +11,7 @@ var _trip = require('./trip');
 
 var _trip2 = _interopRequireDefault(_trip);
 
-var ukMap = new _trip2['default']('uk', [-5, 55], 1400);
-ukMap.init().places([{
+new _trip2['default']('uk', [-5, 55], 1400).init().places([{
   name: 'London',
   latitude: 51.5072,
   longitude: 0.1275
@@ -30,22 +29,19 @@ ukMap.init().places([{
   longitude: -3
 }]);
 
-var thailandMap = new _trip2['default']('thailand', [98, 7], 1400);
-thailandMap.init().places([{
+new _trip2['default']('thailand', [98, 7], 1400).init().places([{
   name: 'Phuket',
   latitude: 7.89,
   longitude: 98.3983
 }]);
 
-var indiaMap = new _trip2['default']('india', [80, 20], 900);
-indiaMap.init().places([{
+new _trip2['default']('india', [80, 20], 900).init().places([{
   name: 'Bangalore',
   latitude: 12.9667,
   longitude: 77.5667
 }]);
 
-var japanMap = new _trip2['default']('japan', [140, 39], 1400);
-japanMap.init().places([{
+new _trip2['default']('japan', [140, 39], 1400).init().places([{
   name: 'Tokyo',
   latitude: 35.6833,
   longitude: 139.6833
@@ -59,8 +55,7 @@ japanMap.init().places([{
   longitude: 135.5022
 }]);
 
-var australiaMap = new _trip2['default']('australia', [135, -30], 600);
-australiaMap.init().places([{
+new _trip2['default']('australia', [135, -30], 600).init().places([{
   name: 'Sydney',
   latitude: -33.865,
   longitude: 151.2094
@@ -74,8 +69,7 @@ australiaMap.init().places([{
   longitude: 153.0333
 }]);
 
-var swedenMap = new _trip2['default']('sweden', [18, 62], 1000);
-swedenMap.init().places([{
+new _trip2['default']('sweden', [22, 62], 1000).init().places([{
   name: 'Moscow',
   latitude: 55.75,
   longitude: 37.6167
