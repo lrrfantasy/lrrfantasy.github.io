@@ -11,7 +11,7 @@ var _trip = require('./trip');
 
 var _trip2 = _interopRequireDefault(_trip);
 
-new _trip2['default']('uk', [-5, 55], 1400).init().places([{
+new _trip2['default']('uk', [0, 55], 600).init().places([{
   name: 'London',
   latitude: 51.5072,
   longitude: 0.1275
@@ -29,19 +29,19 @@ new _trip2['default']('uk', [-5, 55], 1400).init().places([{
   longitude: -3
 }]);
 
-new _trip2['default']('thailand', [98, 7], 1400).init().places([{
+new _trip2['default']('thailand', [98, 7], 600).init().places([{
   name: 'Phuket',
   latitude: 7.89,
   longitude: 98.3983
 }]);
 
-new _trip2['default']('india', [80, 20], 900).init().places([{
+new _trip2['default']('india', [80, 20], 400).init().places([{
   name: 'Bangalore',
   latitude: 12.9667,
   longitude: 77.5667
 }]);
 
-new _trip2['default']('japan', [140, 39], 1400).init().places([{
+new _trip2['default']('japan', [135, 40], 600).init().places([{
   name: 'Tokyo',
   latitude: 35.6833,
   longitude: 139.6833
@@ -55,7 +55,7 @@ new _trip2['default']('japan', [140, 39], 1400).init().places([{
   longitude: 135.5022
 }]);
 
-new _trip2['default']('australia', [135, -30], 600).init().places([{
+new _trip2['default']('australia', [135, -30], 300).init().places([{
   name: 'Sydney',
   latitude: -33.865,
   longitude: 151.2094
@@ -69,7 +69,7 @@ new _trip2['default']('australia', [135, -30], 600).init().places([{
   longitude: 153.0333
 }]);
 
-new _trip2['default']('sweden', [22, 62], 1000).init().places([{
+new _trip2['default']('sweden', [22, 62], 400).init().places([{
   name: 'Moscow',
   latitude: 55.75,
   longitude: 37.6167
@@ -93,6 +93,12 @@ new _trip2['default']('sweden', [22, 62], 1000).init().places([{
   name: 'Copenhagen',
   latitude: 55.6761,
   longitude: 12.5683
+}]);
+
+new _trip2['default']('japan-2', [135, 40], 700).init().places([{
+  name: 'Kyoto',
+  latitude: 35.0117,
+  longitude: 135.7683
 }]);
 
 },{"./trip":2,"lodash":5}],2:[function(require,module,exports){
