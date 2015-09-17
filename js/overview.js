@@ -1,121 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _lodash = require('lodash');
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var _trip = require('./trip');
-
-var _trip2 = _interopRequireDefault(_trip);
-
-var _overview = require('./overview');
-
-var _overview2 = _interopRequireDefault(_overview);
-
-new _trip2['default']('indonesia', [120, 0], 300).init().places([{
-  name: 'Bali',
-  latitude: -8.65,
-  longitude: 115.2167
-}]);
-
-new _trip2['default']('uk', [0, 55], 600).init().places([{
-  name: 'London',
-  latitude: 51.5072,
-  longitude: 0.1275
-}, {
-  name: 'Sheffield',
-  latitude: 53.5856,
-  longitude: -1.4669
-}, {
-  name: 'Edinburgh',
-  latitude: 55.9531,
-  longitude: -3.1889
-}, {
-  name: 'Liverpool',
-  latitude: 53.4,
-  longitude: -3
-}]);
-
-new _trip2['default']('thailand', [98, 7], 600).init().places([{
-  name: 'Phuket',
-  latitude: 7.89,
-  longitude: 98.3983
-}]);
-
-new _trip2['default']('india', [80, 20], 400).init().places([{
-  name: 'Bangalore',
-  latitude: 12.9667,
-  longitude: 77.5667
-}]);
-
-new _trip2['default']('japan', [135, 40], 600).init().places([{
-  name: 'Tokyo',
-  latitude: 35.6833,
-  longitude: 139.6833
-}, {
-  name: 'Nagoya',
-  latitude: 35.1833,
-  longitude: 136.9
-}, {
-  name: 'Osaka',
-  latitude: 34.6939,
-  longitude: 135.5022
-}]);
-
-new _trip2['default']('australia', [135, -30], 300).init().places([{
-  name: 'Sydney',
-  latitude: -33.865,
-  longitude: 151.2094
-}, {
-  name: 'Melbourne',
-  latitude: -37.8136,
-  longitude: 144.9631
-}, {
-  name: 'Brisbane',
-  latitude: -27.4667,
-  longitude: 153.0333
-}]);
-
-new _trip2['default']('sweden', [22, 62], 400).init().places([{
-  name: 'Moscow',
-  latitude: 55.75,
-  longitude: 37.6167
-}, {
-  name: 'St Petersburg',
-  latitude: 59.95,
-  longitude: 30.3
-}, {
-  name: 'Helsinki',
-  latitude: 60.1708,
-  longitude: 24.9375
-}, {
-  name: 'Stockholm',
-  latitude: 59.3294,
-  longitude: 18.0686
-}, {
-  name: 'Oslo',
-  latitude: 59.95,
-  longitude: 10.75
-}, {
-  name: 'Copenhagen',
-  latitude: 55.6761,
-  longitude: 12.5683
-}]);
-
-new _trip2['default']('japan-2', [135, 40], 700).init().places([{
-  name: 'Kyoto',
-  latitude: 35.0117,
-  longitude: 135.7683
-}]);
-
-new _overview2['default'](document.getElementById('overview'));
-
-},{"./overview":2,"./trip":3,"lodash":6}],2:[function(require,module,exports){
-'use strict';
-
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
@@ -166,133 +51,7 @@ var Overview = function Overview(el) {
 exports['default'] = Overview;
 module.exports = exports['default'];
 
-},{"./vendor/datamap":4,"d3":5,"lodash":6}],3:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-var _d3 = require('d3');
-
-var _d32 = _interopRequireDefault(_d3);
-
-var _lodash = require('lodash');
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var _vendorDatamap = require('./vendor/datamap');
-
-var _vendorDatamap2 = _interopRequireDefault(_vendorDatamap);
-
-var defaultConfig = {
-  projection: 'mercator',
-  geographyConfig: {
-    borderColor: '#79b6d2',
-    highlightFillColor: 'rgba(0, 0, 0, 0.3)',
-    highlightBorderColor: '#79b6d2',
-    popupTemplate: function popupTemplate(geography, data) {
-      return '<div class="travel__tooltip">' + geography.properties.name + '</div>';
-    }
-  },
-  bubblesConfig: {
-    borderWidth: 0,
-    fillOpacity: 1,
-    highlightFillColor: '#ff8f8f',
-    highlightBorderWidth: 0,
-    highlightFillOpacity: 1,
-    popupTemplate: function popupTemplate(geography, data) {
-      return '<div class="travel__tooltip">' + data.name + '</div>';
-    }
-  },
-  arcConfig: {
-    strokeColor: '#cd5c5c',
-    greatArc: true
-  },
-  fills: {
-    defaultFill: 'transparent',
-    city: '#cd5c5c'
-  }
-};
-
-function zoom(center, scale) {
-  return function (element) {
-    var projection = _d32['default'].geo.mercator().center(center).scale(scale).translate([element.offsetWidth / 2, element.offsetHeight / 2]);
-    var path = _d32['default'].geo.path().projection(projection);
-    return { path: path, projection: projection };
-  };
-}
-
-var Trip = (function () {
-  function Trip(name, zoomCenter, scale) {
-    _classCallCheck(this, Trip);
-
-    this.config = _lodash2['default'].merge({
-      element: document.getElementById(name),
-      setProjection: zoom(zoomCenter, scale)
-    }, defaultConfig);
-  }
-
-  _createClass(Trip, [{
-    key: 'init',
-    value: function init() {
-      this.instance = new _vendorDatamap2['default'](this.config);
-      return this;
-    }
-  }, {
-    key: 'places',
-    value: function places(_places) {
-      this.places = _places;
-      var bubbles = _places.map(function (place) {
-        return {
-          name: place.name,
-          radius: 5,
-          fillKey: 'city',
-          latitude: place.latitude,
-          longitude: place.longitude
-        };
-      });
-      this.instance.bubbles(bubbles);
-      return this;
-    }
-  }, {
-    key: 'routes',
-    value: function routes(_routes) {
-      var _this = this;
-
-      var arcs = _routes.map(function (route) {
-        return [_this.getPlaceByName(route[0]), _this.getPlaceByName(route[1])];
-      }).map(function (route) {
-        return {
-          origin: route[0],
-          destination: route[1]
-        };
-      });
-      this.instance.arc(arcs);
-      return this;
-    }
-  }, {
-    key: 'getPlaceByName',
-    value: function getPlaceByName(name) {
-      return this.places.filter(function (place) {
-        return place.name === name;
-      })[0];
-    }
-  }]);
-
-  return Trip;
-})();
-
-exports['default'] = Trip;
-module.exports = exports['default'];
-
-},{"./vendor/datamap":4,"d3":5,"lodash":6}],4:[function(require,module,exports){
+},{"./vendor/datamap":2,"d3":3,"lodash":4}],2:[function(require,module,exports){
 (function() {
   var d3, topojson;
 
@@ -12503,7 +12262,7 @@ module.exports = exports['default'];
   }
 })();
 
-},{"d3":5,"topojson":7}],5:[function(require,module,exports){
+},{"d3":3,"topojson":5}],3:[function(require,module,exports){
 !function() {
   var d3 = {
     version: "3.5.6"
@@ -22008,7 +21767,7 @@ module.exports = exports['default'];
   if (typeof define === "function" && define.amd) define(d3); else if (typeof module === "object" && module.exports) module.exports = d3;
   this.d3 = d3;
 }();
-},{}],6:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -34363,7 +34122,7 @@ module.exports = exports['default'];
 }.call(this));
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],7:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 !function() {
   var topojson = {
     version: "1.6.19",
