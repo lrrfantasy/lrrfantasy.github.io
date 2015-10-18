@@ -4,6 +4,18 @@
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
+exports['default'] = {
+  PALE_BLUE: '#79b6d2',
+  INDIAN_RED: '#cd5c5c'
+};
+module.exports = exports['default'];
+
+},{}],2:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -21,18 +33,22 @@ var _vendorDatamap = require('./vendor/datamap');
 
 var _vendorDatamap2 = _interopRequireDefault(_vendorDatamap);
 
-var visited = ['IDN', 'GBR', 'THA', 'IND', 'JPN', 'AUS', 'RUS', 'FIN', 'SWE', 'NOR', 'DEN'];
+var _const = require('./const');
+
+var _const2 = _interopRequireDefault(_const);
+
+var visited = ['IDN', 'GBR', 'THA', 'IND', 'JPN', 'AUS', 'RUS', 'FIN', 'SWE', 'NOR', 'DEN', 'USA'];
 
 var config = {
   projection: 'mercator',
   geographyConfig: {
-    borderColor: '#79b6d2',
+    borderColor: _const2['default'].PALE_BLUE,
     popupOnHover: false,
     highlightOnHover: false
   },
   fills: {
     defaultFill: 'transparent',
-    visited: '#cd5c5c'
+    visited: _const2['default'].INDIAN_RED
   },
   data: visited.reduce(function (mem, cur) {
     mem[cur] = { fillKey: 'visited' };
@@ -51,7 +67,7 @@ var Overview = function Overview(el) {
 exports['default'] = Overview;
 module.exports = exports['default'];
 
-},{"./vendor/datamap":2,"d3":3,"lodash":4}],2:[function(require,module,exports){
+},{"./const":1,"./vendor/datamap":3,"d3":4,"lodash":5}],3:[function(require,module,exports){
 (function() {
   var d3, topojson;
 
@@ -12262,7 +12278,7 @@ module.exports = exports['default'];
   }
 })();
 
-},{"d3":3,"topojson":5}],3:[function(require,module,exports){
+},{"d3":4,"topojson":6}],4:[function(require,module,exports){
 !function() {
   var d3 = {
     version: "3.5.6"
@@ -21767,7 +21783,7 @@ module.exports = exports['default'];
   if (typeof define === "function" && define.amd) define(d3); else if (typeof module === "object" && module.exports) module.exports = d3;
   this.d3 = d3;
 }();
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -34122,7 +34138,7 @@ module.exports = exports['default'];
 }.call(this));
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 !function() {
   var topojson = {
     version: "1.6.19",
@@ -34658,4 +34674,4 @@ module.exports = exports['default'];
   else this.topojson = topojson;
 }();
 
-},{}]},{},[1])
+},{}]},{},[2])

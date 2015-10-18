@@ -2,19 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -23,8 +11,7 @@ time, mark, audio, video {
   vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block; }
 
 body {
@@ -36,8 +23,7 @@ ol, ul {
 blockquote, q {
   quotes: none; }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: '';
   content: none; }
 
@@ -55,6 +41,8 @@ body {
 .header {
   height: auto;
   position: relative; }
+  .header svg {
+    z-index: -1; }
 
 .header__cover {
   position: absolute;
@@ -71,8 +59,7 @@ body {
   font-style: italic;
   z-index: 1; }
 
-.header__sentence,
-.header__ref {
+.header__sentence, .header__ref {
   padding: 20px 0; }
 
 .header__ref {
@@ -84,7 +71,6 @@ body {
 
 .travel__cover {
   position: relative;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
   width: 100%;
   height: 600px;
   padding: 150px 0 0 200px;
@@ -100,7 +86,7 @@ body {
   transition: 0.5s ease-in; }
   .travel__map svg.datamap {
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.6); }
+    background: rgba(0, 0, 0, 0.75); }
   @media (max-width: 700px) {
     .travel__map {
       margin: 0 auto; } }
@@ -115,10 +101,11 @@ body {
   top: 0;
   width: 100%;
   height: 600px;
+  background-color: #536;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  -webkit-filter: contrast(2); }
+  background-blend-mode: lighten; }
 
 .travel__title-group {
   position: absolute;
@@ -139,4 +126,5 @@ body {
   line-height: 46px; }
 
 .travel__photo-place {
-  font-size: 16px; }
+  font-size: 16px;
+  line-height: 22px; }
