@@ -61,12 +61,72 @@ table {
   100% {
     transform: rotate(360deg); } }
 
+.modal {
+  background: black;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  z-index: 5;
+  visibility: hidden;
+  opacity: 0;
+  transition-duration: 1s;
+  transition-property: opacity, visibility;
+  transition-timing-function: linear; }
+  .modal.active {
+    visibility: visible;
+    opacity: 1; }
+
+.modal__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: black;
+  font-size: 80px;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer; }
+
+.modal__title {
+  padding: 10px 0;
+  font-size: 40px;
+  text-align: center; }
+
+.modal__banner {
+  margin: 30px auto 0;
+  width: 90%;
+  height: 70%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #326;
+  background-blend-mode: lighten;
+  transition: 1s background-image linear; }
+
+.modal__gallery {
+  margin: 30px auto 0;
+  width: 90%; }
+
+.modal__gallery-item {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  cursor: pointer; }
+
 * {
   box-sizing: border-box; }
 
 body {
   background: black;
-  font-family: 'Open sans', Arial, sans-serif; }
+  font-family: 'Open sans', Arial, sans-serif;
+  font-weight: lighter; }
 
 a {
   color: black;
@@ -76,15 +136,16 @@ a {
   background: rgba(0, 0, 0, 0.7);
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   padding: 0 50px 0 140px;
   display: block; }
 
 .nav__logo {
-  background-image: url(/asset/logo.png);
-  background-repeat: no-repeat;
+  background-image: url(/asset/images/logo.png);
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   text-indent: -9999px;
   position: fixed;
   top: 20px;
@@ -125,7 +186,6 @@ a {
   padding: 20% 10%;
   text-align: center;
   font-size: 35px;
-  font-weight: lighter;
   font-style: italic;
   z-index: 1; }
 
@@ -138,7 +198,8 @@ a {
   font-size: 25px; }
 
 .travel {
-  position: relative; }
+  position: relative;
+  cursor: pointer; }
 
 .travel__cover {
   position: relative;
@@ -172,10 +233,10 @@ a {
   top: 0;
   width: 100%;
   height: 600px;
-  background-color: #536;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: #326;
   background-blend-mode: lighten; }
 
 .travel__title-group {
@@ -185,7 +246,6 @@ a {
   width: 100%;
   padding: 10px 20px;
   color: white;
-  font-weight: lighter;
   text-align: right;
   z-index: 2; }
   @media (max-width: 700px) {
