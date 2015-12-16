@@ -85,21 +85,16 @@ table {
   right: 0;
   width: 60px;
   height: 60px;
-  background: black;
+  background: transparent;
   font-size: 80px;
   line-height: 60px;
   text-align: center;
   cursor: pointer; }
 
-.modal__title {
-  padding: 10px 0;
-  font-size: 40px;
-  text-align: center; }
-
 .modal__banner {
   margin: 30px auto 0;
   width: 90%;
-  height: 70%;
+  height: 80%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -109,16 +104,23 @@ table {
 
 .modal__gallery {
   margin: 30px auto 0;
-  width: 90%; }
+  width: 90%;
+  height: 80px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap; }
 
 .modal__gallery-item {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: inline-block;
-  width: 80px;
+  width: 120px;
   height: 80px;
   cursor: pointer; }
+  .modal__gallery-item:not(.active) {
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1); }
 
 * {
   box-sizing: border-box; }
