@@ -53,13 +53,31 @@ table {
   100% {
     transform: rotate(360deg); } }
 
-@-webkit-keyframes cd-play {
+@keyframes loading {
   0% {
-    transform: rotate(0); }
+    background: linear-gradient(to right, rgba(128, 128, 128, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%); }
+  5% {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(128, 128, 128, 0.8) 10%, rgba(255, 255, 255, 0.8) 100%); }
+  10% {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(128, 128, 128, 0.8) 20%, rgba(255, 255, 255, 0.8) 100%); }
+  15% {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(128, 128, 128, 0.8) 30%, rgba(255, 255, 255, 0.8) 100%); }
+  20% {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(128, 128, 128, 0.8) 40%, rgba(255, 255, 255, 0.8) 100%); }
+  25% {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(128, 128, 128, 0.8) 50%, rgba(255, 255, 255, 0.8) 100%); }
+  30% {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(128, 128, 128, 0.8) 60%, rgba(255, 255, 255, 0.8) 100%); }
+  35% {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(128, 128, 128, 0.8) 70%, rgba(255, 255, 255, 0.8) 100%); }
+  40% {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(128, 128, 128, 0.8) 80%, rgba(255, 255, 255, 0.8) 100%); }
+  45% {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(128, 128, 128, 0.8) 90%, rgba(255, 255, 255, 0.8) 100%); }
   50% {
-    transform: rotate(180deg); }
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(128, 128, 128, 0.8) 100%); }
   100% {
-    transform: rotate(360deg); } }
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(128, 128, 128, 0.8) 100%); } }
 
 .modal {
   background: black;
@@ -93,6 +111,7 @@ table {
   cursor: pointer; }
 
 .modal__banner {
+  position: relative;
   margin: 30px auto 0;
   width: 90%;
   height: 80%;
@@ -102,6 +121,14 @@ table {
   background-color: #326;
   background-blend-mode: lighten;
   transition: 1s background-image linear; }
+  .modal__banner.loading:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    animation: loading 1s infinite; }
 
 .modal__gallery {
   margin: 30px auto 0;
