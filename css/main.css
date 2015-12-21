@@ -2322,6 +2322,69 @@ table {
   font-size: 16px;
   line-height: 22px; }
 
+.read {
+  padding: 50px; }
+
+.read__book-list {
+  margin: 50px auto;
+  width: 90%; }
+
+.book {
+  position: relative;
+  padding: 15px 0;
+  display: flex; }
+  .book:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    height: 3px;
+    border-radius: 3px; }
+  .book:after {
+    position: absolute;
+    top: 0;
+    width: 65px; }
+  .book.rating-1:before {
+    right: calc(100% * (5 - 1) / 5); }
+  .book.rating-1:after {
+    content: "Rating: 1";
+    left: calc(100% * 1 / 5 + 10px); }
+  .book.rating-2:before {
+    right: calc(100% * (5 - 2) / 5); }
+  .book.rating-2:after {
+    content: "Rating: 2";
+    left: calc(100% * 2 / 5 + 10px); }
+  .book.rating-3:before {
+    right: calc(100% * (5 - 3) / 5); }
+  .book.rating-3:after {
+    content: "Rating: 3";
+    left: calc(100% * 3 / 5 + 10px); }
+  .book.rating-4:before {
+    right: calc(100% * (5 - 4) / 5); }
+  .book.rating-4:after {
+    content: "Rating: 4";
+    left: calc(100% * 4 / 5 + 10px); }
+  .book.rating-5:before {
+    right: calc(100% * (5 - 5) / 5); }
+  .book.rating-5:after {
+    content: "Rating: 5";
+    left: calc(100% * 5 / 5 + 10px); }
+  .book.read:before {
+    background: #0094c8; }
+  .book.reading:before {
+    right: 0;
+    background: #9d896c; }
+  .book.reading:after {
+    content: 'Reading';
+    left: calc(100% + 10px); }
+
+.book__info {
+  padding-left: 20px; }
+
+.book__title,
+.book__author {
+  margin: 10px 0; }
+
 .about {
   padding: 50px; }
 
@@ -2410,3 +2473,6 @@ a {
       color: black; }
     .nav__item a:after {
       content: none; }
+  .nav__item.active a {
+    background: white;
+    color: black; }
