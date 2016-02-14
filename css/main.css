@@ -2190,11 +2190,19 @@ table {
   text-align: center;
   cursor: pointer; }
 
+.modal__airport {
+  margin: 30px auto 0;
+  width: 90%; }
+  .modal__airport ul, .modal__airport li {
+    display: inline-block; }
+  .modal__airport li {
+    padding: 0 10px; }
+
 .modal__banner {
   position: relative;
   margin: 30px auto 0;
   width: 90%;
-  height: 80%;
+  height: 70%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
